@@ -21,6 +21,8 @@ class ChirpSeeder extends Seeder
             Chirp::create([
                 'user_id' => $users->random()->id,
                 'message' => fake()->sentence(),
+                'created_at' => fake()->dateTimeBetween('-30 days', 'now'),
+                'updated_at' => now(),
             ]);
         }
     }
